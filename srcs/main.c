@@ -21,6 +21,7 @@ int	closegame(t_vc *vc)
 void	init()
 {
 	t_vc		vc;
+	poianaf
 	t_mlx		mlx;
 	t_play		play;
 
