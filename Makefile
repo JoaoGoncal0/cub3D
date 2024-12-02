@@ -22,7 +22,7 @@ MLXFLAGS = -lXext -lX11
 
 OBJ_DIR = objs
 
-SRCS = srcs/main.c srcs/utils.c srcs/render.c srcs/map.c includes/cub3D.h
+SRCS = srcs/main.c srcs/utils.c srcs/render.c srcs/map.c
 
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
