@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elemesmo <elemesmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:49:19 by jomendes          #+#    #+#             */
-/*   Updated: 2024/12/03 02:32:07 by elemesmo         ###   ########.fr       */
+/*   Updated: 2024/12/03 17:09:05 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	init(char *file)
 	t_minimap	minimap;
 
 	vc = get_data();
+	
 	mlx.mlx = NULL;
 	mlx.window = NULL;
 	map.matrix = NULL;
@@ -107,7 +108,14 @@ void	init(char *file)
 	play.y = 0;
 	minimap.onoff = 0;
 	map.matrix = get_map(file, &map);
-	map.matrix_ff = get_map(file, &map);
+	get_width(&map);
+	second_map(&map);
+	if(check_map(&map) == 1)
+		return ;
+	int i = 0;
+	while (map.matrix_ff[i])
+		printf("%s", map.matrix_ff[i++]);
+	// map.matrix_ff = get_map(file, &map);
 	vc->map = map;
 	vc->mlx = mlx;
 	vc->play = play;

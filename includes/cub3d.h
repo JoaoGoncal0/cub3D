@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elemesmo <elemesmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:43:22 by dinda-si          #+#    #+#             */
-/*   Updated: 2024/12/03 01:15:16 by elemesmo         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:07:10 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,13 @@ typedef struct s_voidcollector
 
 int		check_args(int ac, char **av);
 char	**get_map(char *file, t_map *map);
+void	get_width(t_map *map);
 void	error(char *str);
 void	drawminimap(t_vc *vc);
+char	*create_top_bottom(t_map *map);
+void	second_map(t_map *map);
+int		check_map_x(t_map *map, int y);
+int		check_map_y(t_map *map);
+int		check_map(t_map *map);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elemesmo <elemesmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:49:23 by jomendes          #+#    #+#             */
-/*   Updated: 2024/12/03 02:32:28 by elemesmo         ###   ########.fr       */
+/*   Updated: 2024/12/03 10:04:35 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	get_color(char c)
 	return (0x00FF00);
 }
 
-void 
-	draw_rectangle(t_vc *vc, int h, int w, int color)
+void	draw_rectangle(t_vc *vc, int h, int w, int color)
 {
 	int		i;
 	int		j;
 
 	h = h * 6;
 	w = w * 6;
+	i = 0;
 	while (i < w)
 	{
 		j = h / 6;
