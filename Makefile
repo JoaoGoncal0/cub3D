@@ -22,7 +22,9 @@ MLXFLAGS = -lXext -lX11
 
 OBJ_DIR = objs
 
-SRCS = srcs/main.c srcs/utils.c srcs/render.c srcs/map.c
+SRCS = srcs/main.c srcs/utils.c srcs/render.c srcs/map.c srcs/free.c \
+		get_next_line/get_next_line_bonus.c \
+		get_next_line/get_next_line_utils_bonus.c
 
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
@@ -44,7 +46,7 @@ $(MLX):
 	@make -s -C ./minilibx-linux
 
 $(NAME): $(OBJS) $(LIBFT) $(MLX)
-	@$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) $(LIBFT) $(MLX) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) -lm -lX11 -lXext -o $(NAME)
 	@echo "$(GREEN)$(NAME) created! 🎉$(RESET)"
 
 clean:

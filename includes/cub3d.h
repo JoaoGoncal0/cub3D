@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elemesmo <elemesmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:43:22 by dinda-si          #+#    #+#             */
-/*   Updated: 2024/12/02 16:09:10 by dinda-si         ###   ########.fr       */
+/*   Updated: 2024/12/03 01:15:16 by elemesmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,26 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <signal.h>
+# include <time.h>
 # include "../minilibx-linux/mlx.h"
+# include "../libft/libft.h"
+# include "../get_next_line/get_next_line.h"
+
+typedef struct s_minimap
+{
+	char	**map;
+	int		x;
+	int		y;
+	int		onoff;
+}		t_minimap;
+
+typedef struct s_map
+{
+	char	**matrix;
+	char	**matrix_ff;
+	int		x;
+	int		y;
+}		t_map;
 
 typedef struct	s_mlx
 {
@@ -41,7 +60,13 @@ typedef struct s_voidcollector
 {
 	t_mlx			mlx;
 	t_play			play;
+	t_map			map;
+	t_minimap		minimap;
 }	t_vc;
 
+int		check_args(int ac, char **av);
+char	**get_map(char *file, t_map *map);
+void	error(char *str);
+void	drawminimap(t_vc *vc);
 
 #endif
