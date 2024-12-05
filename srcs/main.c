@@ -6,7 +6,7 @@
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:49:19 by jomendes          #+#    #+#             */
-/*   Updated: 2024/12/03 17:09:05 by jomendes         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:38:00 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,9 @@ void	init(char *file)
 	second_map(&map);
 	if(check_map(&map) == 1)
 		return ;
-	int i = 0;
-	while (map.matrix_ff[i])
-		printf("%s", map.matrix_ff[i++]);
+	int p = -1;
+	while (map.matrix_ff[++p])
+		printf("%s", map.matrix_ff[p]);
 	// map.matrix_ff = get_map(file, &map);
 	vc->map = map;
 	vc->mlx = mlx;

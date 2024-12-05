@@ -6,7 +6,7 @@
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:43:22 by dinda-si          #+#    #+#             */
-/*   Updated: 2024/12/03 16:07:10 by jomendes         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:29:22 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void	second_map(t_map *map);
 int		check_map_x(t_map *map, int y);
 int		check_map_y(t_map *map);
 int		check_map(t_map *map);
+int		check_0(t_map *map);
 
 #endif

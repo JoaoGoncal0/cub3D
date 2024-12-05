@@ -6,7 +6,7 @@
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 10:05:50 by jomendes          #+#    #+#             */
-/*   Updated: 2024/12/03 17:30:42 by jomendes         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:30:11 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	second_map(t_map *map)
 			x++;
 		}
 		x = ft_strlen(map->matrix_ff[y]) - 1;
+		if (y == map->y)
+			x++;
 		while(x <= map->x + 1)
 		{
 			map->matrix_ff[y][x] = 'w';
@@ -132,12 +134,36 @@ int	check_map_y(t_map *map)
 	return (0);
 }
 
+int	check_0(t_map *map)
+{
+	int	x;
+	int	y;
+
+	y = 2;
+	while (map->matrix_ff[y] && y < map->y)
+	{
+		x = 0;
+		while (map->matrix_ff[y][x])
+		{
+			if (map->matrix_ff[y][x] == '0')
+			{
+				if (map->matrix_ff[y + 1][x] == 'w'
+				|| map->matrix_ff[y - 1][x] == 'w')
+					return (1);
+			}
+			x++;
+		}
+		y++;
+	}
+	return (0);
+}
+
 int	check_map(t_map *map)
 {
 	if (!map->matrix_ff)
 		return (1);
 	if (check_map_x(map, 1) == 0 && check_map_x(map, map->y) == 0
-	&& check_map_y(map) == 0)
+	&& check_map_y(map) == 0 && check_0(map) == 0)
 		return (0);
 	return (1);
 }
